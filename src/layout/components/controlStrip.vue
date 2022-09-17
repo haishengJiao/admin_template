@@ -1,5 +1,7 @@
 <template>
-  <div id="control_strip">ControlStrip</div>
+  <div id="control_strip">
+    <div>1223</div>
+  </div>
 </template>
 
 <script>
