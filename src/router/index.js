@@ -5,6 +5,20 @@ import Layout from '@/layout'
 Vue.use(VueRouter)
 
 const routes = [
+  // 登录
+  {
+    path: '/login',
+    name: 'Login',
+    component: () => import('@/views/login/index.vue'),
+    meta: { title: '登录', icon: 'dashboard' }
+  },
+  // 404
+  {
+    path: '/404',
+    name: '404',
+    component: () => import('@/views/404.vue'),
+    meta: { title: '404', icon: 'dashboard' }
+  },
   {
     path: '/',
     name: 'Layout',
@@ -24,6 +38,10 @@ const routes = [
         component: () => import('@/views/About.vue')
       }
     ]
+  },
+  {
+    path: '*',
+    redirect: '/404'
   }
 ]
 
