@@ -1,21 +1,27 @@
 <template>
   <div id="header">
-    <div class="nav_logo"></div>
-    <div class="nav_header_nav">
-      <!-- <el-menu theme="mxy" :default-active="navActive" mode="horizontal" @select="">
-        <el-menu-item :index="item.index" v-for="(item, eq) in navMenu" :key="eq">
-          <a v-if="item.redirectAdmin" :href="item.path" class="menu-link">{{item.name}}</a>
-          <router-link v-else :to="item.path" class="menu-link">{{item.name}} </router-link>
+    <div class="logo">logo</div>
+    <div class="path">
+      <el-menu default-active="1" class="el-menu-demo" mode="horizontal">
+        <el-menu-item index="1">
+          <div>首页</div>
+          <div class="path_underline"></div>
         </el-menu-item>
-      </el-menu> -->
-      <el-menu class="el-menu-demo" mode="horizontal">
-        <el-menu-item v-for="item in navMenu" :key="item.index">
-           <router-link :to="item.path" class="menu-link">{{item.name}} </router-link>
-          <!-- {{ item.name }} -->
+        <el-menu-item index="2">
+          <div>业务中心</div>
+          <div class="path_underline"></div>
+        </el-menu-item>
+        <el-menu-item index="3">
+          <div>通讯录</div>
+          <div class="path_underline"></div>
+        </el-menu-item>
+        <el-menu-item index="4">
+          <div>设置</div>
+          <div class="path_underline"></div>
         </el-menu-item>
       </el-menu>
     </div>
-    <div class="nav_user_info"></div>
+    <div class="info">info</div>
   </div>
 </template>
 
@@ -23,25 +29,7 @@
 export default {
   name: 'Header',
   data () {
-    return {
-      navMenu: [
-        {
-          name: '首页',
-          path: '/admin',
-          index: '0'
-        },
-        {
-          name: 'element',
-          path: '/element',
-          index: '1'
-        },
-        {
-          name: '设置',
-          path: '/settings',
-          index: '2'
-        }
-      ]
-    }
+    return {}
   },
   methods: {}
 }
@@ -49,24 +37,51 @@ export default {
 
 <style lang='less' scoped>
 #header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 1200px;
   height: 60px;
   margin: 0 auto;
-  display: flex;
-  align-items: center;
-  .nav_logo {
-    width: 200px;
-    height: 60px;
+  .logo {
+    width: 100px;
+    height: 50px;
     background-color: #8df;
   }
-  .nav_header_nav {
-    flex: 1;
-    height: 60px;
-    background-color: orange;
+  .path {
+
+    display: flex;
+    align-items: center;
+    height: 100%;
+    .el-menu.el-menu--horizontal {
+      border-bottom: none;
+    }
+    .el-menu--horizontal>.el-menu-item {
+      border-bottom: none;
+      font-size: 16px;
+      color: #666;
+    }
+    .el-menu--horizontal .el-menu-item:hover {
+      color: var(--hoverColor);
+    }
+    .el-menu--horizontal>.el-menu-item.is-active {
+      border-bottom: none;
+      color: var(--color);
+    }
+    .is-active .path_underline {
+      position: absolute;
+      left: 50%;
+      bottom: 10px;
+      width: 30px;
+      height: 4px;
+      border-radius: 3px;
+      background-color: var(--color);
+      transform: translateX(-50%);
+    }
   }
-  .nav_user_info {
+  .info {
+    width: 180px;
     height: 40px;
-    width: 200px;
     background-color: pink;
   }
 }

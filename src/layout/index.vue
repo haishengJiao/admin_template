@@ -47,6 +47,7 @@ export default {
   height: 100%;
   overflow-y: hidden;
   .app_header {
+    min-width: 1200px;
     background-color: #fff;
   }
   .app_container {

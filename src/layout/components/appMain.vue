@@ -1,7 +1,7 @@
 <template>
   <div id="app_main">AppMain
-    <router-view />
-  </div>
+    <div v-for="item in 50" :key="item">{{item}}</div>
+    <router-view /></div>
 </template>
 
 <script>
@@ -10,7 +10,8 @@ export default {
   data () {
     return {}
   },
-  methods: {}
+  methods: {
+  }
 }
 </script>
 
