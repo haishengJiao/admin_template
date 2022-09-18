@@ -1,6 +1,5 @@
 <template>
   <div id="sidebar">sidebar
-    <div v-for="item in 50" :key="item">{{item}}</div>
   </div>
 </template>
 

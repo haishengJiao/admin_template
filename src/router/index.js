@@ -18,10 +18,16 @@ const routes = [
         component: () => import('@/views/admin')
       },
       {
-        path: '/adbout',
-        name: 'adbout',
-        meta: { title: 'adbout', icon: 'dashboard' },
-        component: () => import('@/views/About.vue')
+        path: '/element',
+        name: 'Element',
+        meta: { title: 'element', icon: 'dashboard' },
+        component: () => import('@/views/element')
+      },
+      {
+        path: '/settings',
+        name: 'Settings',
+        meta: { title: '设置', icon: 'dashboard' },
+        component: () => import('@/views/settings')
       }
     ]
   }
